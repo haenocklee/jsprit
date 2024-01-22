@@ -18,6 +18,7 @@
 package com.graphhopper.jsprit.examples;
 
 import com.graphhopper.jsprit.analysis.toolbox.AlgorithmSearchProgressChartListener;
+import com.graphhopper.jsprit.analysis.toolbox.GraphStreamViewer;
 import com.graphhopper.jsprit.analysis.toolbox.Plotter;
 import com.graphhopper.jsprit.analysis.toolbox.Plotter.Label;
 import com.graphhopper.jsprit.core.algorithm.VehicleRoutingAlgorithm;
@@ -106,7 +107,7 @@ public class PickupAndDeliveryExample {
         System.out.println("#picks: " + analyser.getNumberOfPickups());
         System.out.println("#deliveries: " + analyser.getNumberOfDeliveries());
 
-
+        new GraphStreamViewer(vrp, solution).setRenderDelay(200).display();
     }
 
 }
